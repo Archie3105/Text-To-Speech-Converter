@@ -8,21 +8,11 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: #2980b9; 
-  background: -webkit-linear-gradient(
-    to right,
-    #ffffff,
-    #6dd5fa,
-    #2980b9
-  ); 
-  background: linear-gradient(
-    to right,
-    #ffffff,
-    #6dd5fa,
-    #2980b9
-  );
+  background-image: url("./media/background0.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  /* z-index: 1; */
 }
-
 .container {
   width: 100%;
   height: auto;
@@ -30,19 +20,29 @@ body {
   align-items: center;
   justify-content: center;
   padding: 5rem;
+  margin-top: 20vh;
+  /* max-width: 45vh; */
+  margin: 15vh auto;
 }
 
 .speech-box {
   width: 50%;
-  box-shadow: 2px 2px 15px 2px black;
+  border: 2px solid #262222;
+  box-shadow: 2px 2px 25px 10px rgb(192, 191, 191);
   padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
   gap: 2rem 0;
+  backdrop-filter: blur(2px);
+  border-radius: 1rem;
+  transition: all 0.6s;
 }
-
+.speech-box:hover {
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 25px 10px black;
+}
 .speech-heading {
   width: 100%;
   letter-spacing: 2px;
@@ -70,20 +70,25 @@ body {
 
 #btn {
   width: 100%;
-  border: none;
+  border: 1px solid rgb(149, 55, 236);
   outline: none;
   padding: 0.5rem;
   font-size: 1rem;
   font-weight: 400;
-  background-color: rgb(149, 55, 236);
-  color: #fff;
+  background: transparent;
+  /* background-color: rgb(149, 55, 236); */
+  color: rgb(149, 55, 236);
   letter-spacing: 2px;
   cursor: pointer;
+  border-radius: 1rem;
   transition: all 0.5s;
 }
 
 #btn:hover {
-  background-color: blueviolet;
+  color: #fff;
+  background-color: rgb(81, 57, 103);
+  border: 1px solid rgb(149, 55, 236);
+  box-shadow: 0px 0px 10px 5px rgb(149, 55, 236);
 }
 
 @media (min-width: 1025px) and (max-width: 1200px) {
@@ -133,15 +138,16 @@ body {
   }
 }
 
-@media (min-width: 0px) and (max-width: 319px) {
+@media (min-width: 0px) and (max-width: 400px) {
   .container {
     padding: 5rem 0.5rem;
   }
 
   .speech-box {
+    max-width: 50vh;
     width: 100%;
     gap: 1rem 0;
-    padding: 0.5rem;
+    padding: 1rem;
   }
 
   .speech-heading > h2 {
